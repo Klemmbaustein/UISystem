@@ -1,0 +1,13 @@
+# VS project files
+.vs/
+x64/
+*.sln
+*.vcxproj
+*.filters
+*.user
+# binaries
+lib/
+# Unrelated files
+TextEditor/
+# Linux files
+Build/
