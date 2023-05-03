@@ -1,4 +1,4 @@
-TARGET_EXEC := UISystem.a
+TARGET_EXEC := libUISystem.a
 
 BUILD_DIR := ./Build
 SRC_DIRS := ./Source ./Headers
@@ -9,7 +9,7 @@ DEPS := $(OBJS:.o=.d)
 INC_DIRS := $(shell find $(SRC_DIRS) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-CPPFLAGS := $(INC_FLAGS) -MMD -MP -Wdelete-incomplete -std=c++2a `sdl2-config --cflags --libs`
+CPPFLAGS := $(INC_FLAGS) -DGLEW_STATIC -MMD -MP -Wdelete-incomplete -std=c++2a `sdl2-config --cflags --libs`
 
 # Package all C++ object files into a static library
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
